@@ -11,6 +11,7 @@ class PodScheduler:
                 self.pod_id_counter += 1
                 node["cpu"] -= cpu_required
                 node["pods"].append(pod_id)
+                self.pod_cpu_map[pod_id] = cpu_required  # Add mapping
                 return {"pod_id": pod_id, "node_id": node_id}
         return None
     
