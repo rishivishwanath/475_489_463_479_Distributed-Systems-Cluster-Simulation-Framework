@@ -25,7 +25,7 @@ class HealthMonitor:
                     if node_id not in self.heartbeats:
                         continue
                     last_beat = self.heartbeats.get(node_id, 0)
-                    if now - last_beat > 10:  # 20 seconds threshold
+                    if now - last_beat > 10: 
                         self.node_manager.nodes[node_id]["status"] = "unhealthy"
                         for pod in self.node_manager.nodes[node_id]["pods"]:
                             print(f"Pod CPU required: {pod}")
